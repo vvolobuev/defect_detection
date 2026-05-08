@@ -1,0 +1,33 @@
+Сводка метрик: defects_rgbd_y26n640 (YOLO26n, RGBD 4ch датасет defects_rgbd_4ch_det)
+
+Конфигурация обучения (сервер, Docker, GPU)
+  Модель:     yolo26n.pt
+  Размер:     imgsz=640
+  Эпохи:      100 (early stopping patience=10)
+  Batch:      16
+  Датасет:    defects_rgbd_4ch_det
+
+Обучение — итог
+  Завершено эпох:     99 (ранняя остановка)
+  Лучшая эпоха:       89
+  Время:    ~1.001 часа
+
+  Метрики на valid на лучшей эпохе 89 (из results.csv, строка epoch=89):
+    Precision (Box):  0.87394
+    Recall (Box):     0.76471
+    mAP50 (Box):      0.82330
+    mAP50-95 (Box):   0.55909
+
+  Последняя записанная эпоха в results.csv (epoch=99):
+    Precision (Box):  0.89060
+    Recall (Box):     0.74546
+    mAP50 (Box):      0.81586
+    mAP50-95 (Box):   0.54619
+
+Тест
+  Изображений:      520
+  Экземпляров (GT): 902
+  Precision (Box):  0.862
+  Recall (Box):     0.798
+  mAP50 (Box):      0.846
+  mAP50-95 (Box):   0.576

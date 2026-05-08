@@ -1,0 +1,33 @@
+Сводка метрик: defects_rgb_y26n640 (YOLO26n, RGB датасет defects_rgb_det)
+
+Конфигурация обучения (сервер, Docker, GPU)
+  Модель:     yolo26n.pt
+  Размер:     imgsz=640
+  Эпохи:      100 (early stopping patience=10)
+  Batch:      16
+  Датасет:    defects_rgb_det
+
+Обучение — итог
+  Завершено эпох:     91 (ранняя остановка)
+  Лучшая эпоха:       81
+  Время:    ~0.867 часа
+
+  Метрики на valid на лучшей эпохе 81 (из results.csv, строка epoch=81):
+    Precision (Box):  0.87855
+    Recall (Box):     0.75164
+    mAP50 (Box):      0.83662
+    mAP50-95 (Box):   0.56027
+
+  Последняя записанная эпоха в results.csv (epoch=91):
+    Precision (Box):  0.87004
+    Recall (Box):     0.73977
+    mAP50 (Box):      0.82303
+    mAP50-95 (Box):   0.54084
+
+Тест
+  Изображений:      520
+  Экземпляров (GT): 902
+  Precision (Box):  0.865
+  Recall (Box):     0.769
+  mAP50 (Box):      0.841
+  mAP50-95 (Box):   0.567
