@@ -6,6 +6,8 @@ from pathlib import Path
 import cv2
 import numpy as np
 
+DEFAULT_DATASET_SEED = 177
+
 
 class FrameItem:
     def __init__(self, scene_dir, scene_id, image_id):
@@ -157,8 +159,8 @@ def build_datasets(scenes_root, output_root, dent_module_path, seed, overwrite, 
     dent_mod = load_dent_module(dent_module_path)
     rng = np.random.default_rng(seed + 1000)
 
-    for split_name, split_items in splits.items():
-        for item in split_items:
+    for split_name, frame_items in splits.items():
+        for item in frame_items:
             rgb = cv2.imread(str(item.scene_dir / "rgb" / f"{item.image_id}.png"), cv2.IMREAD_COLOR)
             depth = cv2.imread(str(item.scene_dir / "depth" / f"{item.image_id}.png"), cv2.IMREAD_UNCHANGED)
             if rgb is None or depth is None:
@@ -238,7 +240,7 @@ def main():
     parser.add_argument("--scenes-root", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--dent-module-path", type=Path, default=Path(__file__).with_name("apply_realistic_dents.py"))
-    parser.add_argument("--seed", type=int, default=177)
+    parser.add_argument("--seed", type=int, default=DEFAULT_DATASET_SEED)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--max-retries", type=int, default=40)
     args = parser.parse_args()
