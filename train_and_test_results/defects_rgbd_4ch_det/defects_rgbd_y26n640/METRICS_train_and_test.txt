@@ -27,7 +27,7 @@
 Тест
   Изображений:      520
   Экземпляров (GT): 902
-  Precision (Box):  0.862
-  Recall (Box):     0.798
+  Precision (Box):  0.863
+  Recall (Box):     0.799
   mAP50 (Box):      0.846
   mAP50-95 (Box):   0.576

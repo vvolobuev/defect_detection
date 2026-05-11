@@ -30,4 +30,4 @@
   Precision (Box):  0.865
   Recall (Box):     0.769
   mAP50 (Box):      0.841
-  mAP50-95 (Box):   0.567
+  mAP50-95 (Box):   0.568
